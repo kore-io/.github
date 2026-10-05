@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 🛡️ Reportar uma vulnerabilidade
+    url: https://github.com/kore-io/.github/blob/main/SECURITY.md
+    about: Nunca abra issue pública para falha de segurança. Siga a política de segurança.
+  - name: 💬 Sou cliente e preciso de ajuda
+    url: mailto:suporte@kore.com.br
+    about: Casal, cerimonialista ou convidado? Fale com o suporte por e-mail.

@@ -1,0 +1,88 @@
+name: 🐞 Bug
+description: Algo não funciona como a spec diz que deveria.
+title: "fix(<escopo>): "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Antes de abrir, confira se já não existe uma issue igual.
+        **Não cole dado pessoal real** (nome, e-mail, telefone, chave Pix, CPF) de casal ou convidado. Use os dados de exemplo.
+
+  - type: input
+    id: card
+    attributes:
+      label: Card do Kanban
+      description: Número do card no Kanban Kore, se já existir.
+      placeholder: "58"
+
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Ambiente
+      options:
+        - Produção
+        - Homologação
+        - Local
+    validations:
+      required: true
+
+  - type: dropdown
+    id: perfil
+    attributes:
+      label: Perfil afetado
+      multiple: true
+      options:
+        - Casal
+        - Convidado
+        - Cerimonialista
+        - Vendedor
+        - Admin Kore
+        - Nenhum (só backend ou infraestrutura)
+    validations:
+      required: true
+
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Entrar como ...
+        2. Abrir ...
+        3. Clicar em ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+      description: "O que deveria acontecer. Cite a RN e a spec, se souber (ex.: RN04 da spec de confirmação de presença)."
+    validations:
+      required: true
+
+  - type: textarea
+    id: atual
+    attributes:
+      label: Comportamento atual
+      description: O que acontece. Inclua mensagem de erro, `traceId` e prints.
+    validations:
+      required: true
+
+  - type: input
+    id: dispositivo
+    attributes:
+      label: Aparelho e navegador
+      placeholder: "iPhone 13, Safari 18 / Windows, Chrome 130"
+
+  - type: dropdown
+    id: gravidade
+    attributes:
+      label: Gravidade
+      options:
+        - Crítica — dado exposto, pagamento ou RSVP quebrado, sem contorno
+        - Alta — funcionalidade principal quebrada, com contorno difícil
+        - Média — funcionalidade quebrada, com contorno fácil
+        - Baixa — visual ou texto
+    validations:
+      required: true
