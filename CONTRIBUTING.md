@@ -1,6 +1,6 @@
-# Como contribuir com o Kore
+# Guia do time Kore
 
-Obrigado por contribuir! Este guia vale para todos os repositórios da organização **kore-io**, a não ser que o repositório tenha o seu próprio `CONTRIBUTING.md`.
+Este é o guia de trabalho de quem faz parte do time do Kore. Os repositórios da organização **kore-io** são privados: só membros do time abrem issues e pull requests. As regras valem para todos eles, a não ser que o repositório tenha o seu próprio `CONTRIBUTING.md`.
 
 O passo a passo de cada repositório (instalação, variáveis de ambiente, comandos) fica no `README.md` dele. As decisões de produto e de arquitetura ficam no cofre de documentação (`docs-kore-hub`), que é a fonte única da verdade.
 

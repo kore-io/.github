@@ -1,6 +1,12 @@
 {
   "name": "CI Kore (Node + pnpm)",
-  "description": "Commitlint, lint, type-check e testes em todo PR para homolog e production, no padrão do Kore.",
-  "categories": ["TypeScript", "JavaScript"],
-  "filePatterns": ["package.json$", "pnpm-lock.yaml$"]
+  "description": "Chama o CI central do Kore em todo push, em qualquer branch; o deploy roda depois do CI verde em homolog e production.",
+  "categories": [
+    "TypeScript",
+    "JavaScript"
+  ],
+  "filePatterns": [
+    "package.json$",
+    "pnpm-lock.yaml$"
+  ]
 }

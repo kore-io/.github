@@ -11,14 +11,14 @@ O GitHub usa os arquivos deste repositório em **todo** repositório da organiza
 | Arquivo | Para que serve |
 |---|---|
 | `profile/README.md` | Página pública da organização em github.com/kore-io |
-| `CONTRIBUTING.md` | Como contribuir: branches, commits, PRs e revisão |
-| `CODE_OF_CONDUCT.md` | Código de conduta |
+| `CONTRIBUTING.md` | Guia do time: branches, commits, PRs e revisão |
 | `SECURITY.md` | Como reportar uma vulnerabilidade |
 | `SUPPORT.md` | Onde pedir ajuda (cliente × time) |
 | `ISSUE_TEMPLATE/` | Formulários de issue: bug, melhoria e tarefa técnica |
 | `pull_request_template.md` | Modelo padrão de PR (`feature/*` → `homolog`) |
 | `PULL_REQUEST_TEMPLATE/` | Modelos de PR para release (`homolog` → `production`) e hotfix |
-| `workflow-templates/` | Modelo de CI (GitHub Actions) que aparece em **Actions → New workflow** em cada repositório |
+| `.github/workflows/` | CI central, chamado pelos repositórios: `node-ci.yml` (API, apps e `lib-kore-design`), `vault-check.yml` (cofre) e `terraform-check.yml` (infra) |
+| `workflow-templates/` | Atalho em **Actions → New workflow** que cria o `ci.yml` de cada repositório já chamando o `node-ci.yml` |
 
 ## O que **não** dá para definir aqui
 
@@ -27,9 +27,21 @@ Estes arquivos precisam existir em cada repositório, porque o GitHub não aceit
 - `LICENSE`
 - `CODEOWNERS`
 - `.github/dependabot.yml`
-- `.github/workflows/*.yml` (o modelo daqui só facilita a criação)
+- `.github/workflows/ci.yml`: cada repositório precisa do seu, mesmo que só chame o CI central daqui. O deploy também fica nele, porque usa os secrets de cada repositório
 
 A proteção das branches `production` e `homolog` é configurada pelo Terraform no `tool-kore-infra`.
+
+## Como um repositório usa o CI central
+
+O CI roda em **todo push, em qualquer branch**. O `ci.yml` de cada repositório chama o central:
+
+```yaml
+jobs:
+  ci:
+    uses: kore-io/.github/.github/workflows/node-ci.yml@main
+```
+
+Mudou o CI aqui, muda em todos os repositórios no próximo push. Este repositório precisa continuar **público** para os repositórios privados conseguirem chamar esses workflows.
 
 ## Página só para membros
 
