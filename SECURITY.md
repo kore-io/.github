@@ -6,7 +6,7 @@ A segurança dos dados dos casais e dos convidados é prioridade no Kore. Se voc
 
 **Não abra uma issue pública, não comente em PR e não divulgue a falha** antes de ela ser corrigida.
 
-Reporte pelo **GitHub Private Vulnerability Reporting**: abra a aba **Security** do repositório afetado e clique em **Report a vulnerability**. Se não souber qual repositório é o afetado, use qualquer um da organização.
+Reporte pelo **GitHub Private Vulnerability Reporting**, neste link: [github.com/kore-io/.github/security/advisories/new](https://github.com/kore-io/.github/security/advisories/new). O relatório chega só ao time, nunca fica público. Use esse mesmo link para qualquer parte do produto: os outros repositórios da organização são privados.
 
 Inclua, se possível:
 
