@@ -31,9 +31,7 @@ Com a sua autorização, damos o crédito pela descoberta quando a correção fo
 
 **Dentro do escopo:**
 
-- `kore.com.br` e os sites dos casais em `kore.com.br/<slug>`
-- `app.kore.com.br`
-- `api.kore.com.br`
+- `kore.com.br` e os subdomínios dele, incluindo os sites dos casais
 - o código dos repositórios da organização **kore-io**
 
 **Fora do escopo:**
